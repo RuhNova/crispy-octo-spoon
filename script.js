@@ -6,6 +6,14 @@ const toggleButton = document.getElementById("toggleAnimation");
 const speedUpButton = document.getElementById("speedUp");
 const slowDownButton = document.getElementById("slowDown");
 
+const STAR_COUNT_REDUCED_MOTION = 650;
+const STAR_COUNT_MIN = 900;
+const STAR_COUNT_MAX = 1700;
+const STARS_PER_CORE = 220;
+const SPEED_INCREMENT = 0.2;
+const SPEED_MIN = 0.2;
+const SPEED_MAX = 4;
+
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x05070f);
 
@@ -35,7 +43,9 @@ scene.add(sun);
 const starGeometry = new THREE.BufferGeometry();
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const cpuCores = navigator.hardwareConcurrency || 4;
-const starCount = reducedMotion ? 650 : Math.max(900, Math.min(1700, cpuCores * 220));
+const starCount = reducedMotion
+  ? STAR_COUNT_REDUCED_MOTION
+  : Math.max(STAR_COUNT_MIN, Math.min(STAR_COUNT_MAX, cpuCores * STARS_PER_CORE));
 const starPositions = new Float32Array(starCount * 3);
 for (let i = 0; i < starCount * 3; i += 3) {
   const radius = 140 + Math.random() * 260;
@@ -123,12 +133,12 @@ toggleButton.addEventListener("click", () => {
 });
 
 speedUpButton.addEventListener("click", () => {
-  speedMultiplier = Math.min(4, speedMultiplier + 0.2);
+  speedMultiplier = Math.min(SPEED_MAX, speedMultiplier + SPEED_INCREMENT);
   updateStatus();
 });
 
 slowDownButton.addEventListener("click", () => {
-  speedMultiplier = Math.max(0.2, speedMultiplier - 0.2);
+  speedMultiplier = Math.max(SPEED_MIN, speedMultiplier - SPEED_INCREMENT);
   updateStatus();
 });
 
