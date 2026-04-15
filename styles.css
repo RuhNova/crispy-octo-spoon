@@ -1,0 +1,212 @@
+:root {
+  --bg: #070914;
+  --panel: rgba(13, 22, 46, 0.7);
+  --panel-border: rgba(154, 186, 255, 0.26);
+  --text: #e8eeff;
+  --muted: #a9b8e7;
+  --accent: #6aa6ff;
+  --accent-2: #9a6bff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 0%, #172754, transparent 50%),
+    radial-gradient(circle at 100% 20%, #2a0f5e, transparent 40%), var(--bg);
+  min-height: 100vh;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  background: rgba(7, 9, 20, 0.78);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4vw;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.nav a:hover {
+  color: var(--text);
+}
+
+main {
+  width: min(1200px, 92vw);
+  margin: 1.5rem auto 2rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.hero-copy,
+.hero-canvas-wrap,
+.panel {
+  border: 1px solid var(--panel-border);
+  border-radius: 22px;
+  background: var(--panel);
+  box-shadow: 0 24px 80px rgba(1, 4, 13, 0.45);
+}
+
+.hero-copy {
+  padding: clamp(1.2rem, 2vw, 2rem);
+}
+
+.eyebrow {
+  color: #94aefa;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1.02;
+  margin: 0.6rem 0 0.9rem;
+}
+
+.lead {
+  color: var(--muted);
+  margin: 0;
+  max-width: 58ch;
+}
+
+.actions {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.btn {
+  border: 1px solid rgba(177, 201, 255, 0.35);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.64rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-color: transparent;
+}
+
+.hero-canvas-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+#universeCanvas {
+  flex: 1;
+  width: 100%;
+  display: block;
+}
+
+.scene-status {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.panel {
+  margin-top: 1.25rem;
+  padding: clamp(1.1rem, 2vw, 1.8rem);
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.card-grid,
+.physics-grid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.physics-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card,
+.formula {
+  padding: 0.95rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(173, 193, 245, 0.2);
+}
+
+.card h3,
+.formula h3 {
+  margin: 0 0 0.4rem;
+}
+
+.card p,
+.formula p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.equation {
+  color: #f4f7ff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.15rem;
+  margin: 0 0 0.4rem;
+}
+
+.site-footer {
+  text-align: center;
+  color: #95a5d3;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 940px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-canvas-wrap {
+    min-height: 360px;
+  }
+}
