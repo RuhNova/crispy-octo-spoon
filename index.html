@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmos Atlas — Universe, Planets & Physics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">Cosmos Atlas</div>
+      <nav class="nav">
+        <a href="#explore">Explore</a>
+        <a href="#planets">Planets</a>
+        <a href="#physics">Physics</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="explore">
+        <div class="hero-copy">
+          <p class="eyebrow">Immersive astronomy experience</p>
+          <h1>Universe, Planets & Physics in Motion</h1>
+          <p class="lead">
+            Dive into a cinematic 3D solar system, discover planetary facts, and
+            understand the physics that shapes space-time.
+          </p>
+          <div class="actions">
+            <button id="toggleAnimation" class="btn primary">Pause Orbit</button>
+            <button id="speedUp" class="btn">Speed +</button>
+            <button id="slowDown" class="btn">Speed −</button>
+          </div>
+        </div>
+        <div class="hero-canvas-wrap">
+          <canvas id="universeCanvas" aria-label="3D universe scene"></canvas>
+          <p id="sceneStatus" class="scene-status">Orbit speed: 1.0x</p>
+        </div>
+      </section>
+
+      <section id="planets" class="panel">
+        <h2>Planetary Highlights</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Mercury</h3>
+            <p>Closest to the Sun, with extreme temperature swings and no thick atmosphere.</p>
+          </article>
+          <article class="card">
+            <h3>Earth</h3>
+            <p>Our ocean world with active plate tectonics and a protective magnetic field.</p>
+          </article>
+          <article class="card">
+            <h3>Mars</h3>
+            <p>A cold desert planet with giant volcanoes and traces of ancient water systems.</p>
+          </article>
+          <article class="card">
+            <h3>Jupiter</h3>
+            <p>The largest planet, a gas giant with powerful storms like the Great Red Spot.</p>
+          </article>
+          <article class="card">
+            <h3>Saturn</h3>
+            <p>Known for iconic rings made of ice and rock particles orbiting in thin bands.</p>
+          </article>
+          <article class="card">
+            <h3>Neptune</h3>
+            <p>Deep blue giant with supersonic winds and methane-rich upper atmosphere.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="physics" class="panel">
+        <h2>Core Physics Concepts</h2>
+        <div class="physics-grid">
+          <article class="formula">
+            <h3>Gravity</h3>
+            <p class="equation">F = G(m₁m₂ / r²)</p>
+            <p>Massive objects attract each other; distance weakens the force quickly.</p>
+          </article>
+          <article class="formula">
+            <h3>Orbital Motion</h3>
+            <p class="equation">v = √(GM / r)</p>
+            <p>Planets stay in orbit when forward velocity balances gravitational pull.</p>
+          </article>
+          <article class="formula">
+            <h3>Relativity</h3>
+            <p class="equation">E = mc²</p>
+            <p>Energy and mass are equivalent, linking matter to cosmic-scale dynamics.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">Designed for deep space curiosity ✦</footer>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
