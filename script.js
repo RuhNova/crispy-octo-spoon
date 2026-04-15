@@ -33,7 +33,9 @@ const sun = new THREE.Mesh(
 scene.add(sun);
 
 const starGeometry = new THREE.BufferGeometry();
-const starCount = 1700;
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const cpuCores = navigator.hardwareConcurrency || 4;
+const starCount = reducedMotion ? 650 : Math.max(900, Math.min(1700, cpuCores * 220));
 const starPositions = new Float32Array(starCount * 3);
 for (let i = 0; i < starCount * 3; i += 3) {
   const radius = 140 + Math.random() * 260;

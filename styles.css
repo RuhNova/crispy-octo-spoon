@@ -191,7 +191,7 @@ h2 {
   color: #f4f7ff;
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.15rem;
-  margin-bottom: 0.4rem !important;
+  margin: 0 0 0.4rem;
 }
 
 .site-footer {
